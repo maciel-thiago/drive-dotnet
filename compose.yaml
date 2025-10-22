@@ -1,0 +1,7 @@
+﻿services:
+  drive.api:
+    image: drive.api
+    build:
+      context: .
+      dockerfile: Drive.Api/Dockerfile
+
