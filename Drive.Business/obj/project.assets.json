@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "Drive.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Drive.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Drive.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Drive.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Drive.Domain/Drive.Domain.csproj",
+      "msbuildProject": "../Drive.Domain/Drive.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "Drive.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/softable/.nuget/packages/": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj": {
+              "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
