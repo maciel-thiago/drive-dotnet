@@ -193,6 +193,19 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Drive.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Drive.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Drive.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Drive.Business.dll": {}
+        }
+      },
       "Drive.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -541,6 +554,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Drive.Business/1.0.0": {
+      "type": "project",
+      "path": "../Drive.Business/Drive.Business.csproj",
+      "msbuildProject": "../Drive.Business/Drive.Business.csproj"
+    },
     "Drive.Domain/1.0.0": {
       "type": "project",
       "path": "../Drive.Domain/Drive.Domain.csproj",
@@ -549,6 +567,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Drive.Business >= 1.0.0",
       "Drive.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.0"
     ]
@@ -578,6 +597,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "/Users/softable/RiderProjects/dotnet-example/Drive.Business/Drive.Business.csproj": {
+              "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Business/Drive.Business.csproj"
+            },
             "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj": {
               "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj"
             }

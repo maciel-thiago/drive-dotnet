@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Drive.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+486fe8b1f43e6596934fc534748b568374025138")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43ead887e854a2687b1154b30214bbff7cf918cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Drive.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Drive.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
