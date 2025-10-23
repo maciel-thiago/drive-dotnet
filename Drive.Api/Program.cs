@@ -1,8 +1,15 @@
+using Drive.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+// Register EF Core DbContext
+builder.Services.AddDbContext<DriveDbContext>(options => options.UseInMemoryDatabase("DriveDb"));
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
