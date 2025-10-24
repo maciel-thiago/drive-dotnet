@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Drive.Api.Controllers;
 
 [ApiController]
-[Route("/files")]
+[Route("files")]
 public class DriveFileController(
     UploadFileHandler uploadFileHandler,
     GetFileHandler getFileHandler,
@@ -21,7 +21,7 @@ public class DriveFileController(
             return BadRequest("Cabeçalho X-User-Id inválido");
 
         if (!Request.HasFormContentType)
-            return BadRequest("Envie multipart/form-data");
+            return BadRequest("Envie multipart/forma-data");
 
         var form = await Request.ReadFormAsync(ct);
         var file = form.Files.GetFile("file");
