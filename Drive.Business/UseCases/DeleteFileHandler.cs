@@ -11,7 +11,7 @@ public class DeleteFileHandler(IFileRepository repository, IFileStorage storage)
         if (entity is null)
             return false;
 
-        await storage.DeleteAsync(entity.FileName, ct);
+        await storage.DeleteAsync(entity.StoragePath, ct);
         await repository.DeleteAsync(entity, ct);
         await repository.SaveChangesAsync(ct);
         return true;
