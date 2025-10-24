@@ -6,7 +6,7 @@ namespace Drive.Business.UseCases;
 
 public sealed class GetFileHandler(IFileRepository repository, IFileStorage fileStorage)
 {
-    public async Task<(FileDetailsDTO meta, Stream? content)> HandleAsync(
+    public async Task<(FileDetailsDTO meta, Stream? stream)> HandleAsync(
         Guid id,
         bool withContent,
         CancellationToken ct
