@@ -1,92 +1,50 @@
+using Drive.Business.Services;
+
 namespace Drive.Infrastructure.Storage;
 
-public class LocalFileStorage { }
+public class LocalFileStorage : IFileStorage
+{
+    private readonly string _root;
 
-
-/**
- *
- *
- *
- *
- interface Request {
-  pathParameters: {}
-
-  queryStringParameters: {}
-
-  body: {
-      title: string,
-      size: number,
-      file: {
-        type: string,
-        base64: string // Remove metadata information
-  }
-}
-
-interface Response {
-    statusCode: 204
-}
-
-interface Request {
-  pathParameters: {}
-
-  queryStringParameters: {
-      pageSize: number
-      pageNumber: number
+    public LocalFileStorage(string? root = null)
+    {
+        _root = root ?? Path.Combine(Directory.GetCurrentDirectory(), "storage");
+        Directory.CreateDirectory(_root);
     }
 
-  body: {}
-}
-
-interface Response {
-  files: GetFileResponse[]
-  pageSize: number
-  pageNumber: number
-  totalPages: number
-  totalCount: number
-}
-___________________________
-interface Request {
-  pathParameters: {}
-
-  queryStringParameters: {
-      pageSize: number
-      pageNumber: number
+    public async Task<string> SaveFileAsync(
+        Stream stream,
+        string filename,
+        CancellationToken ct = default
+    )
+    {
+        var storedName = $"{Guid.NewGuid():N}_{Path.GetFileName(filename)}";
+        var storagePath = Path.Combine(_root, storedName);
+        stream.Position = 0;
+        await using var fileStream = new FileStream(
+            storagePath,
+            FileMode.CreateNew,
+            FileAccess.Write,
+            FileShare.None
+        );
+        await stream.CopyToAsync(fileStream, ct);
+        return storedName;
     }
 
-  body: {}
-}
-
-interface Response {
-  files: GetFileResponse[]
-  pageSize: number
-  pageNumber: number
-  totalPages: number
-  totalCount: number
-}
-interface GetFileResponse {
-  id: string // UUID
-  name: string
-  size: number
-  fileType: string
-  preSignedUrl: string
-  createdAt: string // ISO Date
-}
-
-------------------------------------
-
-interface Request {
-  pathParameters: {
-      id: string // UUID
+    public Task<Stream?> OpenFileAync(string storagePath, CancellationToken ct = default)
+    {
+        var fullPath = Path.Combine(_root, storagePath);
+        if (!File.Exists(fullPath))
+            return Task.FromResult<Stream?>(null);
+        Stream stream = new FileStream(fullPath, FileMode.Open, FileAccess.Read, FileShare.Read);
+        return Task.FromResult<Stream?>(stream);
     }
 
-  queryStringParameters: {}
-
-  body: {}
+    public Task DeleteAsync(string storagePath, CancellationToken ct = default)
+    {
+        var fullPath = Path.Combine(_root, storagePath);
+        if (File.Exists(fullPath))
+            File.Delete(fullPath);
+        return Task.CompletedTask;
+    }
 }
-
-
-interface Response {
-    statusCode: 204
-}
-
- */
