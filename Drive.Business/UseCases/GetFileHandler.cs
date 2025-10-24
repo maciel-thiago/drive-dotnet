@@ -29,7 +29,7 @@ public sealed class GetFileHandler(IFileRepository repository, IFileStorage file
         if (!withContent)
             return (meta, null);
 
-        var stream = await fileStorage.OpenFileAync(entity.FileName, ct);
+        var stream = await fileStorage.OpenFileAync(entity.StoragePath, ct);
         return (meta, stream);
     }
 }
