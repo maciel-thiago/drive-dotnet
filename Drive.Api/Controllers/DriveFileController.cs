@@ -14,17 +14,18 @@ public class DriveFileController(
     [HttpPost(Name = "PostDriveFile")]
     public async Task<IActionResult> UploadFile(
         [FromHeader(Name = "X-User-Id")] string? userId,
+        IFormFile? file,
         CancellationToken ct
     )
     {
-        if (string.IsNullOrWhiteSpace(userId) || !int.TryParse(userId, out var uid) || uid <= 0)
+        if (string.IsNullOrWhiteSpace(userId) || !Guid.TryParse(userId, out Guid uid))
             return BadRequest("Cabeçalho X-User-Id inválido");
 
         if (!Request.HasFormContentType)
             return BadRequest("Envie multipart/forma-data");
 
-        var form = await Request.ReadFormAsync(ct);
-        var file = form.Files.GetFile("file");
+        // var form = await Request.ReadFormAsync(ct);
+        // var file = form.Files.GetFile("file");
 
         if (file == null || file.Length == 0)
             return BadRequest("Arquivo ausente");

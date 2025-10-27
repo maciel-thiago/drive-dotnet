@@ -3,7 +3,7 @@ namespace Drive.Domain.Entities;
 public sealed class DriveFile
 {
     public Guid Id { get; set; } = Guid.NewGuid();
-    public int UserId { get; private set; }
+    public Guid UserId { get; private set; }
     public string FileName { get; private set; } = null!;
     public string ContentType { get; private set; } = "application/octet-stream";
     public long Size { get; private set; }
@@ -12,7 +12,14 @@ public sealed class DriveFile
     public bool IsDeleted { get; private set; } = false;
 
     public DriveFile() { }
-    public DriveFile(int userId, string fileName, string contentType, long size, string storagePath)
+
+    public DriveFile(
+        Guid userId,
+        string fileName,
+        string contentType,
+        long size,
+        string storagePath
+    )
     {
         UserId = userId;
         FileName = fileName;
@@ -20,4 +27,6 @@ public sealed class DriveFile
         Size = size;
         StoragePath = storagePath;
     }
+
+    public void MarkAsDeleted() => IsDeleted = true;
 }
