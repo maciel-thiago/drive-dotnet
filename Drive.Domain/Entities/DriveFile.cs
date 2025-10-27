@@ -29,4 +29,6 @@ public sealed class DriveFile
     }
 
     public void MarkAsDeleted() => IsDeleted = true;
+
+    public void Restore() => IsDeleted = false;
 }

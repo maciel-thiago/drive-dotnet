@@ -10,6 +10,9 @@ public sealed class DriveFileRepository(DriveDbContext db) : IFileRepository
     public Task<DriveFile?> GetByIdAsync(Guid id, CancellationToken ct = default) =>
         db.Files.AsNoTracking().FirstOrDefaultAsync(f => f.Id == id, ct);
 
+    public Task<DriveFile?> GetByIdIncludingDeletedAsync(Guid id, CancellationToken ct = default) =>
+        db.Files.IgnoreQueryFilters().FirstOrDefaultAsync(f => f.Id == id, ct);
+
     public async Task AddAsync(DriveFile file, CancellationToken ct = default) =>
         await db.Files.AddAsync(file, ct);
 
@@ -20,5 +23,14 @@ public sealed class DriveFileRepository(DriveDbContext db) : IFileRepository
         file.MarkAsDeleted();
         db.Files.Update(file);
         return Task.CompletedTask;
+    }
+
+    public async Task<IReadOnlyList<DriveFile>> GetDeletedAsync(CancellationToken ct = default)
+    {
+        return await db
+            .Files.IgnoreQueryFilters()
+            .Where(f => f.IsDeleted)
+            .OrderByDescending(f => f.CreatedAt)
+            .ToListAsync(ct);
     }
 }
