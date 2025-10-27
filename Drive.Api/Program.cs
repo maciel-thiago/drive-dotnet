@@ -13,7 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Register EF Core DbContext
-builder.Services.AddDbContext<DriveDbContext>(options => options.UseInMemoryDatabase("DriveDb"));
+builder.Services.AddDbContext<DriveDbContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseNpgsql(connectionString);
+});
 
 // Register application services
 builder.Services.AddScoped<IFileRepository, DriveFileRepository>();
