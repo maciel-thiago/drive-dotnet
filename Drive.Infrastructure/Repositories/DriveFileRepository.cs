@@ -17,7 +17,8 @@ public sealed class DriveFileRepository(DriveDbContext db) : IFileRepository
 
     public Task DeleteAsync(DriveFile file, CancellationToken ct = default)
     {
-        db.Files.Remove(file);
+        file.MarkAsDeleted();
+        db.Files.Update(file);
         return Task.CompletedTask;
     }
 }
