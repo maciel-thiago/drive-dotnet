@@ -6,7 +6,7 @@ namespace Drive.Business.UseCases;
 
 public sealed class GetFileHandler(IFileRepository repository, IFileStorage fileStorage)
 {
-    public async Task<(FileDetailsDTO meta, Stream? stream)> HandleAsync(
+    public async Task<(FileDetailsDto meta, Stream? stream)> HandleAsync(
         Guid id,
         bool withContent,
         CancellationToken ct
@@ -14,9 +14,9 @@ public sealed class GetFileHandler(IFileRepository repository, IFileStorage file
     {
         var entity = await repository.GetByIdAsync(id, ct);
         if (entity is null)
-            return (null, null);
+            return (null, null)!;
 
-        var meta = new FileDetailsDTO(
+        var meta = new FileDetailsDto(
             entity.Id,
             entity.UserId,
             entity.FileName,

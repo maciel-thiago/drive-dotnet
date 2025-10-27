@@ -7,7 +7,7 @@ namespace Drive.Business.UseCases;
 
 public sealed class UploadFileHandler(IFileRepository repository, IFileStorage fileStorage)
 {
-    public async Task<FileDetailsDTO> HandleAsync(
+    public async Task<FileDetailsDto> HandleAsync(
         Guid userId,
         string filename,
         string contentType,
@@ -21,7 +21,7 @@ public sealed class UploadFileHandler(IFileRepository repository, IFileStorage f
         await repository.AddAsync(entity, ct);
         await repository.SaveChangesAsync(ct);
 
-        return new FileDetailsDTO(
+        return new FileDetailsDto(
             entity.Id,
             entity.UserId,
             entity.FileName,

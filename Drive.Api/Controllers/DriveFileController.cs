@@ -1,4 +1,5 @@
 using Drive.Business.UseCases;
+using Drive.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Drive.Api.Controllers;
@@ -23,9 +24,6 @@ public class DriveFileController(
 
         if (!Request.HasFormContentType)
             return BadRequest("Envie multipart/forma-data");
-
-        // var form = await Request.ReadFormAsync(ct);
-        // var file = form.Files.GetFile("file");
 
         if (file == null || file.Length == 0)
             return BadRequest("Arquivo ausente");

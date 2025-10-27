@@ -1,6 +1,6 @@
 namespace Drive.Business.DTOs;
 
-public sealed record FileDetailsDTO(
+public sealed record FileDetailsDto(
     Guid Id,
     Guid UserId,
     string FileName,

@@ -4,7 +4,6 @@ using Drive.Domain.Interfaces;
 using Drive.Infrastructure.Data;
 using Drive.Infrastructure.Repositories;
 using Drive.Infrastructure.Storage;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

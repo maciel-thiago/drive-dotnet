@@ -9,7 +9,7 @@ public sealed class DriveFile
     public long Size { get; private set; }
     public string StoragePath { get; private set; } = null!;
     public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
-    public bool IsDeleted { get; private set; } = false;
+    public bool IsDeleted { get; private set; }
 
     public DriveFile() { }
 
