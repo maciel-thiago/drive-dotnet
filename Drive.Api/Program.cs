@@ -26,6 +26,8 @@ builder.Services.AddSingleton<IFileStorage>(_ => new LocalFileStorage());
 builder.Services.AddScoped<UploadFileHandler>();
 builder.Services.AddScoped<GetFileHandler>();
 builder.Services.AddScoped<DeleteFileHandler>();
+builder.Services.AddScoped<RestoreFileHandler>();
+builder.Services.AddScoped<ListDeletedFilesHandler>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

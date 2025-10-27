@@ -1,0 +1,16 @@
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/bin/Debug/net9.0/Drive.Business.deps.json
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/bin/Debug/net9.0/Drive.Business.dll
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/bin/Debug/net9.0/Drive.Business.pdb
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/bin/Debug/net9.0/Drive.Domain.dll
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/bin/Debug/net9.0/Drive.Domain.pdb
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/Drive.Business.csproj.AssemblyReference.cache
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/Drive.Business.GeneratedMSBuildEditorConfig.editorconfig
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/Drive.Business.AssemblyInfoInputs.cache
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/Drive.Business.AssemblyInfo.cs
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/Drive.Business.csproj.CoreCompileInputs.cache
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/Drive.Business.sourcelink.json
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/Drive.Bu.ECC991FD.Up2Date
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/Drive.Business.dll
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/refint/Drive.Business.dll
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/Drive.Business.pdb
+/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/Debug/net9.0/ref/Drive.Business.dll

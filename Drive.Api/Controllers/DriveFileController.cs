@@ -1,5 +1,4 @@
 using Drive.Business.UseCases;
-using Drive.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Drive.Api.Controllers;
@@ -9,7 +8,9 @@ namespace Drive.Api.Controllers;
 public class DriveFileController(
     UploadFileHandler uploadFileHandler,
     GetFileHandler getFileHandler,
-    DeleteFileHandler deleteFileHandler
+    DeleteFileHandler deleteFileHandler,
+    RestoreFileHandler restoreFileHandler,
+    ListDeletedFilesHandler listDeletedFilesHandler
 ) : ControllerBase
 {
     [HttpPost(Name = "PostDriveFile")]
@@ -57,6 +58,22 @@ public class DriveFileController(
             return NotFound();
 
         return File(content, meta.ContentType, meta.FileName);
+    }
+
+    [HttpPost("{id:guid}/restore", Name = "RestoreFile")]
+    public async Task<IActionResult> RestoreFile(Guid id, CancellationToken ct)
+    {
+        var ok = await restoreFileHandler.HandleAsync(id, ct);
+        if (!ok)
+            return NotFound();
+        return NoContent();
+    }
+
+    [HttpGet("deleted", Name = "GetDeletedFiles")]
+    public async Task<IActionResult> GetDeletedFiles(CancellationToken ct)
+    {
+        var deletedFiles = await listDeletedFilesHandler.HandleAsync(ct);
+        return Ok(deletedFiles);
     }
 
     [HttpDelete("{id:guid}")]

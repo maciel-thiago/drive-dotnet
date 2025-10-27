@@ -1,0 +1,12 @@
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/bin/Debug/net9.0/Drive.Domain.deps.json
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/bin/Debug/net9.0/Drive.Domain.dll
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/bin/Debug/net9.0/Drive.Domain.pdb
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/obj/Debug/net9.0/Drive.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/obj/Debug/net9.0/Drive.Domain.AssemblyInfoInputs.cache
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/obj/Debug/net9.0/Drive.Domain.AssemblyInfo.cs
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/obj/Debug/net9.0/Drive.Domain.csproj.CoreCompileInputs.cache
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/obj/Debug/net9.0/Drive.Domain.sourcelink.json
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/obj/Debug/net9.0/Drive.Domain.dll
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/obj/Debug/net9.0/refint/Drive.Domain.dll
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/obj/Debug/net9.0/Drive.Domain.pdb
+/Users/softable/RiderProjects/dotnet-example/Drive.Domain/obj/Debug/net9.0/ref/Drive.Domain.dll
