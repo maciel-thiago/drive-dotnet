@@ -7,6 +7,7 @@ using Drive.Infrastructure.Auth;
 using Drive.Infrastructure.Data;
 using Drive.Infrastructure.Repositories;
 using Drive.Infrastructure.Storage;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,7 +45,7 @@ var signingKey = jwtSection["SigningKey"];
 var issuer = jwtSection["Issuer"];
 var audience = jwtSection["Audience"];
 
-/*builder
+builder
     .Services.AddAuthentication(options =>
     {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -52,8 +53,8 @@ var audience = jwtSection["Audience"];
     })
     .AddJwtBearer(options =>
     {
-        options.TokenValidationParameters();
-    });*/
+        //options.TokenValidationParameters();
+    });
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
