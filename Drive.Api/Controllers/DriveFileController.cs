@@ -15,6 +15,8 @@ public class DriveFileController(
 ) : ControllerBase
 {
     [HttpPost(Name = "PostDriveFile")]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> UploadFile(
         [FromHeader(Name = "X-User-Id")] string? userId,
         IFormFile? file,
@@ -44,6 +46,8 @@ public class DriveFileController(
     }
 
     [HttpGet("{id:guid}", Name = "GetDriveFile")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetFile(
         Guid id,
         [FromQuery] bool download,
@@ -62,6 +66,8 @@ public class DriveFileController(
     }
 
     [HttpPost("{id:guid}/restore", Name = "RestoreFile")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> RestoreFile(Guid id, CancellationToken ct)
     {
         var ok = await restoreFileHandler.HandleAsync(id, ct);
@@ -71,6 +77,8 @@ public class DriveFileController(
     }
 
     [HttpGet("deleted", Name = "GetDeletedFiles")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetDeletedFiles(CancellationToken ct)
     {
         var deletedFiles = await listDeletedFilesHandler.HandleAsync(ct);
@@ -78,6 +86,8 @@ public class DriveFileController(
     }
 
     [HttpDelete("{id:guid}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> DeleteFile(Guid id, CancellationToken ct)
     {
         var ok = await deleteFileHandler.HandleAsync(id, ct);
@@ -87,6 +97,8 @@ public class DriveFileController(
     }
 
     [HttpGet("user/{userId:guid}", Name = "GetFilesByUser")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetFilesByUser(Guid userId, CancellationToken ct)
     {
         var files = await getFileByUserHandler.HandleAsync(userId, ct);
