@@ -1,10 +1,12 @@
 using Drive.Business.UseCases;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Drive.Api.Controllers;
 
 [ApiController]
 [Route("files")]
+[Authorize]
 public class DriveFileController(
     UploadFileHandler uploadFileHandler,
     GetFileHandler getFileHandler,
