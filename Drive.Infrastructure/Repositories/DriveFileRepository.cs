@@ -33,4 +33,16 @@ public sealed class DriveFileRepository(DriveDbContext db) : IFileRepository
             .OrderByDescending(f => f.CreatedAt)
             .ToListAsync(ct);
     }
+
+    public async Task<IReadOnlyList<DriveFile>> GetByUserAsync(
+        Guid userId,
+        CancellationToken ct = default
+    )
+    {
+        return await db
+            .Files.IgnoreQueryFilters()
+            .Where(f => f.UserId == userId)
+            .OrderByDescending(f => f.CreatedAt)
+            .ToListAsync(ct);
+    }
 }

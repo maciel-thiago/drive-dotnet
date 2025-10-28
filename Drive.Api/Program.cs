@@ -28,6 +28,7 @@ builder.Services.AddScoped<GetFileHandler>();
 builder.Services.AddScoped<DeleteFileHandler>();
 builder.Services.AddScoped<RestoreFileHandler>();
 builder.Services.AddScoped<ListDeletedFilesHandler>();
+builder.Services.AddScoped<GetFilesByUserHandler>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

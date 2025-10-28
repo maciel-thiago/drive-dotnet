@@ -10,7 +10,8 @@ public class DriveFileController(
     GetFileHandler getFileHandler,
     DeleteFileHandler deleteFileHandler,
     RestoreFileHandler restoreFileHandler,
-    ListDeletedFilesHandler listDeletedFilesHandler
+    ListDeletedFilesHandler listDeletedFilesHandler,
+    GetFilesByUserHandler getFileByUserHandler
 ) : ControllerBase
 {
     [HttpPost(Name = "PostDriveFile")]
@@ -83,5 +84,12 @@ public class DriveFileController(
         if (!ok)
             return NotFound();
         return NoContent();
+    }
+
+    [HttpGet("user/{userId:guid}", Name = "GetFilesByUser")]
+    public async Task<IActionResult> GetFilesByUser(Guid userId, CancellationToken ct)
+    {
+        var files = await getFileByUserHandler.HandleAsync(userId, ct);
+        return Ok(files);
     }
 }
