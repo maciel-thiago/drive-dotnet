@@ -11,7 +11,7 @@ public sealed class UserRepository(DriveDbContext db) : IUserRepository
         db.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id, ct);
 
     public Task<User?> GetByEmailAsync(string email, CancellationToken ct = default) =>
-        db.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email == email, ct);
+        db.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email == email && x.IsActive, ct);
 
     public async Task AddAsync(User user, CancellationToken ct = default) =>
         await db.Users.AddAsync(user, ct);
