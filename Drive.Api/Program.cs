@@ -1,6 +1,9 @@
+using Drive.Business.Auth;
 using Drive.Business.Services;
 using Drive.Business.UseCases;
+using Drive.Domain.Auth;
 using Drive.Domain.Interfaces;
+using Drive.Infrastructure.Auth;
 using Drive.Infrastructure.Data;
 using Drive.Infrastructure.Repositories;
 using Drive.Infrastructure.Storage;
@@ -18,6 +21,11 @@ builder.Services.AddDbContext<DriveDbContext>(options =>
     options.UseNpgsql(connectionString);
 });
 
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Jwt"));
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
 // Register application services
 builder.Services.AddScoped<IFileRepository, DriveFileRepository>();
 builder.Services.AddSingleton<IFileStorage>(_ => new LocalFileStorage());
@@ -29,6 +37,23 @@ builder.Services.AddScoped<DeleteFileHandler>();
 builder.Services.AddScoped<RestoreFileHandler>();
 builder.Services.AddScoped<ListDeletedFilesHandler>();
 builder.Services.AddScoped<GetFilesByUserHandler>();
+builder.Services.AddScoped<LoginHandler>();
+
+var jwtSection = builder.Configuration.GetSection("Jwt");
+var signingKey = jwtSection["SigningKey"];
+var issuer = jwtSection["Issuer"];
+var audience = jwtSection["Audience"];
+
+/*builder
+    .Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters();
+    });*/
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
