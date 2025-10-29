@@ -1,3 +1,4 @@
+using System.Text;
 using Drive.Business.Auth;
 using Drive.Business.Services;
 using Drive.Business.UseCases;
@@ -9,6 +10,7 @@ using Drive.Infrastructure.Repositories;
 using Drive.Infrastructure.Storage;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,8 +55,20 @@ builder
     })
     .AddJwtBearer(options =>
     {
-        //options.TokenValidationParameters();
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = issuer,
+            ValidateAudience = true,
+            ValidAudience = audience,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signingKey)),
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero,
+        };
     });
+
+builder.Services.AddAuthorization();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -80,6 +94,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

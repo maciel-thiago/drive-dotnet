@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/softable/RiderProjects/dotnet-example/Drive.Api/Drive.Api.csproj": {}
+    "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Api\\Drive.Api.csproj": {}
   },
   "projects": {
-    "/Users/softable/RiderProjects/dotnet-example/Drive.Api/Drive.Api.csproj": {
+    "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Api\\Drive.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/softable/RiderProjects/dotnet-example/Drive.Api/Drive.Api.csproj",
+        "projectUniqueName": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Api\\Drive.Api.csproj",
         "projectName": "Drive.Api",
-        "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Api/Drive.Api.csproj",
-        "packagesPath": "/Users/softable/.nuget/packages/",
-        "outputPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Api/obj/",
+        "projectPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Api\\Drive.Api.csproj",
+        "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/softable/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -26,8 +26,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/softable/RiderProjects/dotnet-example/Drive.Infrastructure/Drive.Infrastructure.csproj": {
-                "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Infrastructure/Drive.Infrastructure.csproj"
+              "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Infrastructure\\Drive.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Infrastructure\\Drive.Infrastructure.csproj"
               }
             }
           }
@@ -40,14 +40,22 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.10, )"
@@ -65,6 +73,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[9.0.6, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.14.0, )"
             }
           },
           "imports": [
@@ -86,21 +98,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\thiag\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/softable/RiderProjects/dotnet-example/Drive.Business/Drive.Business.csproj": {
+    "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Business\\Drive.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/softable/RiderProjects/dotnet-example/Drive.Business/Drive.Business.csproj",
+        "projectUniqueName": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Business\\Drive.Business.csproj",
         "projectName": "Drive.Business",
-        "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Business/Drive.Business.csproj",
-        "packagesPath": "/Users/softable/.nuget/packages/",
-        "outputPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Business/obj/",
+        "projectPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Business\\Drive.Business.csproj",
+        "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/softable/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -112,8 +124,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj": {
-                "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj"
+              "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Domain\\Drive.Domain.csproj": {
+                "projectPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Domain\\Drive.Domain.csproj"
               }
             }
           }
@@ -126,9 +138,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -149,21 +161,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\thiag\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj": {
+    "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Domain\\Drive.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Domain\\Drive.Domain.csproj",
         "projectName": "Drive.Domain",
-        "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj",
-        "packagesPath": "/Users/softable/.nuget/packages/",
-        "outputPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/obj/",
+        "projectPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Domain\\Drive.Domain.csproj",
+        "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/softable/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -185,9 +197,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -208,21 +220,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\thiag\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/softable/RiderProjects/dotnet-example/Drive.Infrastructure/Drive.Infrastructure.csproj": {
+    "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Infrastructure\\Drive.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/softable/RiderProjects/dotnet-example/Drive.Infrastructure/Drive.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Infrastructure\\Drive.Infrastructure.csproj",
         "projectName": "Drive.Infrastructure",
-        "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Infrastructure/Drive.Infrastructure.csproj",
-        "packagesPath": "/Users/softable/.nuget/packages/",
-        "outputPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Infrastructure/obj/",
+        "projectPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Infrastructure\\Drive.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/softable/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -234,11 +246,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/softable/RiderProjects/dotnet-example/Drive.Business/Drive.Business.csproj": {
-                "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Business/Drive.Business.csproj"
+              "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Business\\Drive.Business.csproj": {
+                "projectPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Business\\Drive.Business.csproj"
               },
-              "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj": {
-                "projectPath": "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj"
+              "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Domain\\Drive.Domain.csproj": {
+                "projectPath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Domain\\Drive.Domain.csproj"
               }
             }
           }
@@ -251,14 +263,18 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.1, )"
@@ -276,6 +292,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.14.0, )"
             }
           },
           "imports": [
@@ -294,7 +314,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\thiag\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TmJ4fGVhLaQ=",
+  "dgSpecHash": "Tnc7MBr/v/w=",
   "success": true,
-  "projectFilePath": "/Users/softable/RiderProjects/dotnet-example/Drive.Domain/Drive.Domain.csproj",
+  "projectFilePath": "C:\\Users\\thiag\\RiderProjects\\drive-dotnet\\Drive.Domain\\Drive.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
